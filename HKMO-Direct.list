@@ -1,132 +1,12 @@
-# 香港 / 澳门银行及政府服务 — Loon 远程直连规则集
-# 核实日期：2026-10-19；来源为机构官网、香港金管局及澳门金管局。
+# 港澳生活与酒店直连 — Loon 远程直连规则集
+# 更新日期：2026-10-27；新增域名来源及参考规则见各分类注释。
+# 范围：港澳政府及公共服务、八达通、旅游交通、跨境票务、酒店集团全球网站。
 # 导入时选择 DIRECT；规则行不带策略。请放在宽泛代理规则之前。
-# DOMAIN-SUFFIX 同时匹配该域名及其子域名；DOMAIN 仅匹配完整主机名。
-# 域名规则不能区分 URL 路径；共享网站的地区影响范围见对应注释。
-# 仅收录已核实的官网 / 网银域名，不代表穷尽各银行 App 的所有接口。
-# 不匹配整个 .hk / .mo，也不收录第三方共享 CDN 或云平台后缀。
-
-# ===== 香港：传统银行 =====
-
-# 汇丰香港 — https://www.hsbc.com.hk/
-DOMAIN-SUFFIX,hsbc.com.hk
-# HSBCnet：汇丰香港官网链接的全球企业银行平台，亦影响其他地区 HSBCnet。
-DOMAIN-SUFFIX,hsbcnet.com
-
-# 恒生 — https://www.hangseng.com/；同域名下澳门等地区页面亦直连。
-DOMAIN-SUFFIX,hangseng.com
-
-# 中银香港 — https://www.bochk.com/
-DOMAIN-SUFFIX,bochk.com
-
-# 渣打香港 — https://www.sc.com/hk/ 及官网所链接的网银 / 证券 / Straight2Bank。
-# 以下为全球共享主机：同主机下其他国家 / 地区的页面及业务也会直连。
-# 精确匹配主机，不扩展至整个 sc.com 或 standardchartered.com。
-DOMAIN,www.sc.com
-DOMAIN,retail.sc.com
-DOMAIN,wealth.sc.com
-DOMAIN,s2b.standardchartered.com
-
-# 东亚 — https://www.hkbea.com/；同域名下海外分支页面亦直连。
-DOMAIN-SUFFIX,hkbea.com
-
-# 工银亚洲 — https://www.icbcasia.com/；共享网银入口见文末工银条目。
-DOMAIN-SUFFIX,icbcasia.com
-
-# 建行亚洲 — https://www.asia.ccb.com/；亦含 /macau/ 澳门业务，不扩展至 ccb.com。
-DOMAIN-SUFFIX,asia.ccb.com
-
-# 招商永隆 — https://www.cmbwinglungbank.com/；亦含内地及澳门业务。
-DOMAIN-SUFFIX,cmbwinglungbank.com
-
-# 大新 — https://www.dahsing.com/
-DOMAIN-SUFFIX,dahsing.com
-
-# 集友 — https://www.chiyubank.com/
-DOMAIN-SUFFIX,chiyubank.com
-
-# 创兴 — https://www.chbank.com/；亦含内地及澳门分支页面。
-DOMAIN-SUFFIX,chbank.com
-
-# 花旗香港 — https://www.citibank.com.hk/
-DOMAIN-SUFFIX,citibank.com.hk
-
-# 星展香港 — https://www.dbs.com.hk/
-DOMAIN-SUFFIX,dbs.com.hk
-
-# 华侨香港 — https://www.ocbc.com.hk/
-DOMAIN-SUFFIX,ocbc.com.hk
-
-# ===== 香港：数字银行 =====
-
-# 众安 ZA Bank — https://bank.za.group/；仅银行子域，不扩展至众安集团 za.group。
-DOMAIN-SUFFIX,bank.za.group
-
-# Mox — https://mox.com/
-DOMAIN-SUFFIX,mox.com
-
-# WeLab 汇立 — https://www.welab.bank/
-DOMAIN-SUFFIX,welab.bank
-
-# livi — https://www.livibank.com/
-DOMAIN-SUFFIX,livibank.com
-
-# 蚂蚁银行（香港）— https://www.antbank.hk/
-DOMAIN-SUFFIX,antbank.hk
-
-# 富融 Fusion Bank — https://www.fusionbank.com/
-DOMAIN-SUFFIX,fusionbank.com
-
-# 大象 EleBank（原天星）— https://www.elebank.com/
-DOMAIN-SUFFIX,elebank.com
-
-# 平安数字银行（原 PAO Bank）— https://www.pingandb.com/tc/
-DOMAIN-SUFFIX,pingandb.com
-
-# ===== 澳门：银行 =====
-
-# 中银澳门 — https://its.bocmacau.com/ 、https://cbs.bocmacau.com/
-DOMAIN-SUFFIX,bocmacau.com
-# 中银澳门官网亦使用 https://www.bankofchina.com/mo/ 及 https://www.boc.cn/mo/。
-# 两个 www 主机全球共享：其他地区 / 内地官网页面亦直连；不扩展至集团全部子域。
-DOMAIN,www.bankofchina.com
-DOMAIN,www.boc.cn
-
-# 大西洋 BNU — https://www.bnu.com.mo/
-DOMAIN-SUFFIX,bnu.com.mo
-
-# 大丰 — https://www.taifungbank.com/ 、https://ibanking.taifungbank.com/
-DOMAIN-SUFFIX,taifungbank.com
-
-# 工银澳门 — https://www.icbc.com.mo/
-DOMAIN-SUFFIX,icbc.com.mo
-# 工商银行澳门分行 — 澳门金管局列示 https://macaubranch.icbc.com.cn/
-DOMAIN-SUFFIX,macaubranch.icbc.com.cn
-
-# 澳门国际 — https://www.lusobank.com.mo/
-DOMAIN-SUFFIX,lusobank.com.mo
-
-# 华侨澳门 — https://www.ocbc.com.mo/
-DOMAIN-SUFFIX,ocbc.com.mo
-
-# 澳门商业银行 BCM — https://www.bcm.com.mo/
-DOMAIN-SUFFIX,bcm.com.mo
-
-# 汇丰澳门 — 澳门金管局列示 https://www.hsbc.com.mo/
-DOMAIN-SUFFIX,hsbc.com.mo
-
-# 东亚澳门 — 澳门金管局列示 https://www.hkbea.com.mo/
-DOMAIN-SUFFIX,hkbea.com.mo
-
-# 交通银行澳门 — 澳门金管局列示 https://www.bankcomm.com.mo/
-DOMAIN-SUFFIX,bankcomm.com.mo
-
-# 工银共享境外网银：澳门个人入口 /icbc/abroadperbank/ 使用 areaCode=0119。
-# https://myebank.icbc.com.cn/icbc/abroadperbank/main/index2.jsp?areaCode=0119
-# https://corpebank.icbc.com.cn/icbc/corporbank/saft_guide.jsp
-# 仅匹配两个共享网银主机；其他国家 / 地区使用同主机的工行业务亦直连。
-DOMAIN,myebank.icbc.com.cn
-DOMAIN,corpebank.icbc.com.cn
+# 全部使用 DOMAIN-SUFFIX：同时匹配该域名及其所有子域名。
+# 域名归属已按官网资料核对；本次未进行中国内地各运营商线路的可达性实测。
+# 域名规则不能区分 URL 路径；共享平台及全球酒店网站的其他地区业务亦直连。
+# 不匹配整个 .hk / .mo，不收录第三方共享 CDN 或云平台后缀。
+# 本规则集不包含银行规则。
 
 # ===== 香港：政府及公共服务 =====
 
@@ -160,6 +40,105 @@ DOMAIN-SUFFIX,tradesinglewindow.hk
 # https://www.gov.mo/ 、https://www.smg.gov.mo/
 DOMAIN-SUFFIX,gov.mo
 
-# 银行监管名录（用于交叉核实机构及官方链接）：
-# https://vpr.hkma.gov.hk/eng/regulatory-resources/registers/register-of-ais-and-lros/
-# https://www.amcm.gov.mo/en/bank/bank-institutions-list?type=company-parent-bank-leaf-2
+# ===== 八达通 =====
+
+# 现成规则参考：https://github.com/xOS/Config/blob/Her/RuleSet/HKOnly.list
+# 以下 5 个域名均由八达通官网公布；后缀匹配覆盖其全部子域名。
+# 官方来源：https://www.octopus.com.hk/sc/consumer/customer-service/faq/customer-service/customer-data-protection.html
+# 包括 app.oepay.octopus-cards.com；不代表穷尽 App 使用的第三方接口。
+
+# 八达通官网及服务
+DOMAIN-SUFFIX,octopus.com.hk
+DOMAIN-SUFFIX,octopuscards.com
+DOMAIN-SUFFIX,octopus-cards.com
+DOMAIN-SUFFIX,online-octopus.com
+DOMAIN-SUFFIX,octopushk.link
+
+# ===== 旅游、机场及公共交通 =====
+
+# 香港旅游发展局 — https://www.discoverhongkong.cn/ 、https://www.discoverhongkong.com/
+DOMAIN-SUFFIX,discoverhongkong.cn
+DOMAIN-SUFFIX,discoverhongkong.com
+
+# 港铁及高铁香港段 — https://www.mtr.com.hk/ 、https://www.highspeed.mtr.com.hk/
+DOMAIN-SUFFIX,mtr.com.hk
+
+# 香港国际机场 — https://www.hongkongairport.com/
+DOMAIN-SUFFIX,hongkongairport.com
+
+# 澳门国际机场 — https://www.macau-airport.com/
+DOMAIN-SUFFIX,macau-airport.com
+
+# 澳门通 — https://www.macaupass.com/
+DOMAIN-SUFFIX,macaupass.com
+
+# ===== 跨境巴士、船票及售票平台 =====
+
+# 港澳交通官方链接参考：https://www.macaotourism.gov.mo/zh-hant/article/before-you-travel/travelling-to-macao
+# 后缀匹配同时覆盖官网、订票及其他子域名；共享售票平台的其他路线亦直连。
+
+# 港珠澳大桥穿梭巴士（金巴）— https://www.hzmbus.com/
+DOMAIN-SUFFIX,hzmbus.com
+
+# 喷射飞航 — https://www.turbojet.com.hk/
+DOMAIN-SUFFIX,turbojet.com.hk
+
+# 金光飞航 — https://hk.cotaiwaterjet.com/
+DOMAIN-SUFFIX,cotaiwaterjet.com
+
+# 永东巴士官网及官方售票系统 — https://www.eebus.com/ 、https://www.myeebus.com/eebusfans/
+# 官方售票链接来源：https://www.eebus.com/comm/webpage.aspx?id=2676190001
+DOMAIN-SUFFIX,eebus.com
+DOMAIN-SUFFIX,myeebus.com
+
+# 环岛中港通及售票系统 — 包括 ticketing.tilchinalink.com。
+# 官方售票链接来源：https://www.tilchinalink.com/ticketing.php?lang=sc
+# 其他官网：https://www.trans-island.com.hk/ 、https://www.chinalink.hk/
+DOMAIN-SUFFIX,tilchinalink.com
+DOMAIN-SUFFIX,trans-island.com.hk
+DOMAIN-SUFFIX,chinalink.hk
+DOMAIN-SUFFIX,zakc.group
+
+# GoByBus / Go巴出行 — https://www.gobybus.hk/ 、https://www.gobybus.cn/
+# 包括中旅、粤港直通巴、港澳一号及港澳快线等运营商的售票子域名。
+DOMAIN-SUFFIX,gobybus.hk
+DOMAIN-SUFFIX,gobybus.cn
+
+# 中旅巴士 — https://www.hkctgbus.com/
+DOMAIN-SUFFIX,hkctgbus.com
+
+# 港澳一号 — https://www.onebus.hk/
+DOMAIN-SUFFIX,onebus.hk
+
+# 港澳快线 — https://www.hkmoexpress.com/
+DOMAIN-SUFFIX,hkmoexpress.com
+
+# 珠江客运 — https://www.cksp.com.hk/
+DOMAIN-SUFFIX,cksp.com.hk
+
+# ===== 酒店集团（含全球网站） =====
+
+# 以下集团域名及其全部子域名直连，影响范围包括全球酒店、会员及订房服务。
+# 域名规则不能按 URL 路径仅匹配香港 / 澳门酒店。
+# 不代表穷尽酒店 App、支付及第三方订房接口。
+
+# 希尔顿，含香港康莱德 / 港丽 — https://www.hilton.com.cn/ 、https://www.hilton.com/
+DOMAIN-SUFFIX,hilton.com.cn
+DOMAIN-SUFFIX,hilton.com
+
+# 香格里拉，含香港嘉里酒店 — https://www.shangri-la.com/cn/hongkong/kerry/
+DOMAIN-SUFFIX,shangri-la.com
+
+# 帝盛 — https://www.dorsetthotels.com/ 、https://www.dorsetthospitality.com/
+DOMAIN-SUFFIX,dorsetthotels.com
+DOMAIN-SUFFIX,dorsetthospitality.com
+
+# 富豪 — https://www.regalhotel.com/
+DOMAIN-SUFFIX,regalhotel.com
+
+# 如心 — https://www.ninahotelgroup.com/
+DOMAIN-SUFFIX,ninahotelgroup.com
+
+# 海逸 — https://www.harbour-plaza.com/
+DOMAIN-SUFFIX,harbour-plaza.com
+
